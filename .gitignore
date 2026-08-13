@@ -1,0 +1,9 @@
+# Zusammengebaute Einzeldatei — wird nur fuer Netlify Drop gebraucht,
+# GitHub Pages liefert die Quelldateien direkt aus.
+dist/
+
+# Windows-Verknuepfung, gehoert nicht ins Repo
+Repos.lnk
+
+# Versehentliche Kopie des Projekts in sich selbst
+/Minecraft Tierlist Website/
