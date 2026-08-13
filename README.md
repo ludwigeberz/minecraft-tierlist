@@ -95,37 +95,33 @@ Alles in `js/config.js`:
 
 ---
 
-## Ins Netz stellen
+## Die Seite ist online
 
-### 1. Zusammenbauen
+**<https://ludwigeberz.github.io/minecraft-tierlist/>**
+
+Läuft über GitHub Pages aus diesem Repository
+([ludwigeberz/minecraft-tierlist](https://github.com/ludwigeberz/minecraft-tierlist)),
+Branch `main`, Wurzelverzeichnis. Kostenlos und ohne Verfallsdatum.
+
+### Änderungen veröffentlichen
 
 ```
-powershell -ExecutionPolicy Bypass -File build.ps1
+git add -A
+git commit -m "was du geaendert hast"
+git push
 ```
 
-Das schreibt `dist/index.html` — eine einzige Datei mit CSS und JavaScript darin.
-**Nach jeder Änderung** an `index.html`, `css/` oder `js/` neu ausführen.
+Nach etwa einer Minute ist die Änderung online. `build.ps1` brauchst du dafür
+**nicht** — Pages liefert `index.html`, `css/` und `js/` direkt aus.
 
-### 2. Hochladen
+### Wofür dann build.ps1?
 
-[app.netlify.com/drop](https://app.netlify.com/drop) öffnen und den **Ordner `dist`**
-per Drag & Drop auf die Seite ziehen. Kein Konto nötig, du bekommst sofort eine
-Adresse wie `https://schillernder-name-123.netlify.app`.
-
-Diesen Link teilst du mit deinen Freunden. Sie sehen die Liste, ändern kann sie
-nur, wer den PIN hat.
-
-> Ohne Konto verfällt die Seite nach ein paar Stunden. Wenn du dich mit GitHub
-> oder E-Mail anmeldest, bleibt sie dauerhaft und du kannst unter *Site settings →
-> Change site name* eine hübschere Adresse wählen.
-
-### Aktualisieren
-
-`build.ps1` laufen lassen, dann bei Netlify unter **Deploys** den `dist`-Ordner
-erneut auf das Feld ziehen. Der Link bleibt gleich.
+Nur, falls du die Seite mal woanders hinlegen willst (z.B. per Drag & Drop auf
+[app.netlify.com/drop](https://app.netlify.com/drop)). Das Skript baut alles zu
+einer einzigen `dist/index.html` zusammen.
 
 ### Was nicht funktioniert
 
 Supabase Edge Functions taugen nicht als Webhoster — das Gateway setzt auf jede
 Antwort `Content-Security-Policy: default-src 'none'; sandbox`, damit läuft im
-Browser kein JavaScript. Wurde ausprobiert und wieder entfernt.
+Browser kein JavaScript. Wurde ausprobiert und wieder verworfen.
